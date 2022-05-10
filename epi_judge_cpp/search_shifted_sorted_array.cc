@@ -5,7 +5,16 @@ using std::vector;
 
 int SearchSmallest(const vector<int>& A) {
   // TODO - you fill in here.
-  return 0;
+  int j = 0, k = A.size()-1;
+  while (j < k) {
+    int m = j + (k-j)/2;
+    if (A[m] > A[k]) {
+      j = m + 1;
+    } else {
+      k = m;
+    }
+  }
+  return j;
 }
 
 int main(int argc, char* argv[]) {
